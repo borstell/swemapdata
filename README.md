@@ -37,7 +37,7 @@ ggplot() +
   geom_sf(data = big_cities)
 ```
 
-![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)]()
+![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example1.png)
 
 ## Source
 
