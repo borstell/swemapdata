@@ -27,6 +27,8 @@ Note: The `swemapdata` package contains similar data as the [`swemaps2`](https:/
 
 ## Examples
 
+Some processing may require transforming to a `tibble` and back:
+
 ```r
 # Load packages
 library(tidyverse)
@@ -44,9 +46,31 @@ big_cities <-
 ggplot() +
   geom_sf(data = landsdelar) +
   geom_sf(data = big_cities)
+
+
+lan |> 
+  ggplot() +
+  geom_sf() +
+  geom_sf(data = \(x) x |> filter(name == "Dalarnas"), fill = "dodgerblue") +
+  theme_void()
 ```
 
 ![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example1.png)
+
+```r
+# Load packages
+library(tidyverse)
+library(sf)
+library(swemapdata)
+
+# Plot all the "län" and fill Dalarna in blue
+lan |> 
+  ggplot() +
+  geom_sf() +
+  geom_sf(data = \(x) x |> filter(name == "Dalarnas"), fill = "dodgerblue") +
+  theme_void()
+```
+![Example of region fill](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example2.png)
 
 ## Source
 
