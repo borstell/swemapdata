@@ -1,4 +1,4 @@
-<img src="https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata.png" alt="swemapdata written across a blue and yellow Sweden map" width="300"/>
+<img src="https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata.png" alt="swemapdata written across a blue and yellow Sweden map" width="500"/>
 
 # swemapdata
 A Package of Spatial Data for Sweden (regions and cities)
