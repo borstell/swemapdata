@@ -80,6 +80,7 @@ The logo at the top was made with the package itself:
 library(tidyverse)
 library(sf)
 library(swemapdata)
+library(ggtext
 
 ggplot() +
   geom_sf(data = landsdelar |> filter(name == "Norrland"), 
@@ -87,9 +88,9 @@ ggplot() +
   geom_sf(data = landsdelar |> filter(name == "Götaland"), 
               fill = "#005293", color = "transparent") +
   geom_sf(data = landsdelar |> filter(name == "Svealand"), fill = "#FFCD00", color = "transparent") +
-  ggtext::geom_richtext(aes(x = 550000, y = 6640000, label = "swemapdata"), 
-                        angle = -30, label.color = "transparent", fill = "transparent",
-                        family = "Righteous", size = 5, color = "grey10") +
+  geom_richtext(aes(x = 550000, y = 6640000, label = "swemapdata"),
+                angle = -30, label.color = "transparent", fill = "transparent",
+                family = "Righteous", size = 5, color = "grey10") +
   xlim(100000, 1000000) +
   theme_void()
 ```
