@@ -1,7 +1,7 @@
-<img src="https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata.png" alt="swemapdata written across a blue and yellow Sweden map" width="500"/>
+![](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata.png)
 
 # swemapdata
-A Package of Spatial Data for Sweden (regions and cities)
+A Package of Spatial Data for Sweden - Regions and Cities
 
 Access spatial data for Swedish cities (coordinates) and regions (polygons) from Statistics Sweden (SCB) directly.
 
@@ -17,13 +17,13 @@ The `swemapdata` package contains spatial data for easy mapping of Swedish citie
 
 The package contains five datasets:
 
-- `kommuner`: Swedish municipalities (administrative unit; polygon data)
-- `lan`: Swedish _län_ (administrative unit; polygon data)
+- `kommuner`: Swedish _kommuner_ ('municipalities'; administrative unit; polygon data)
+- `lan`: Swedish _län_ ('county'; administrative unit; polygon data)
 - `landsdelar`: Swedish _landsdelar_ ('country parts'; informal larger regions; polygon data)
-- `lokal_arbetsmarknad`: Swedish labor market areas (administrative unit; polygon data)
-- `tatorter`: Swedish _tätorter_ ('densely populated locations'; cities/towns; coordinate data (points))
+- `lokal_arbetsmarknad`: Swedish _lokal arbetsmarknad_ ('local labor market'; administrative unit; polygon data)
+- `tatorter`: Swedish _tätorter_ ('densely (populated) towns'; cities/towns; coordinate data (points))
 
-For plotting `swemapdata` package data on a map, see, e.g., the [`sf`](https://r-spatial.github.io/sf/index.html) package documentation.
+All datasets are simple features objects, which means they work best with [`sf`](https://r-spatial.github.io/sf/index.html) package functions. For plotting `swemapdata` package data on a map, see, e.g., the [`sf`](https://r-spatial.github.io/sf/index.html) package documentation.
 
 Note: The `swemapdata` package contains similar data as the [`swemaps2`](https://github.com/filipwastberg/swemaps2) package, which is not updated for the most recent R version.
 
