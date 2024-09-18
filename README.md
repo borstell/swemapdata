@@ -3,6 +3,12 @@ A Package of Spatial Data for Sweden (regions and cities)
 
 Access spatial data for Swedish cities (coordinates) and regions (polygons) from Statistics Sweden (SCB) directly.
 
+## Installation
+
+```r
+devtools::install_github("borstell/swemapdata")
+```
+
 ## Functionality
 
 The `swemapdata` package contains spatial data for easy mapping of Swedish cities and regions. The package is a fully dataset-based package, containing only data but no standalone functions.
