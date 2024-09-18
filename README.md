@@ -36,6 +36,7 @@ library(dplyr)
 library(ggplot2)
 library(swemapdata)
 
+# Plot only top-10 cities by population on top of "landsdelar"
 tatorter |>
   slice_max(order_by = pop, n = 10) |> 
   ggplot() +
