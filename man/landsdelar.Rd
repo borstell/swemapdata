@@ -5,7 +5,7 @@
 \alias{landsdelar}
 \title{Landsdelar (informal region; 'country parts')}
 \format{
-A data frame of Swedish "landsdelar" regions, with two variables:
+An SF object of Swedish "landsdelar" regions, with two variables:
   \code{name} and \code{geometry}.
 }
 \usage{

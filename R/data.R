@@ -22,7 +22,7 @@
 #' Data originally from Statistics Sweden (SCB), but reworked for new grouping:
 #' https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/digitala-granser/
 #'
-#' @format A data frame of Swedish "landsdelar" regions, with two variables:
+#' @format An SF object of Swedish "landsdelar" regions, with two variables:
 #'   \code{name} and \code{geometry}.
 "landsdelar"
 
