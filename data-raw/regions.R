@@ -35,7 +35,8 @@ kommuner <-
   sf::st_read("data-raw/regions/Kommun_Sweref99TM.shp") |>
   dplyr::rename("code" = "KnKod",
                 "name" = "KnNamn") |>
-  dplyr::as_tibble()
+  dplyr::as_tibble() |>
+  sf::st_as_sf()
 
 
 
@@ -57,7 +58,8 @@ lan <-
     .default = NA
   )) |>
   dplyr::relocate("group", .before = 3) |>
-  dplyr::as_tibble()
+  dplyr::as_tibble() |>
+  sf::st_as_sf()
 
 
 
@@ -66,7 +68,8 @@ landsdelar <-
   lan |>
   dplyr::summarize(geometry = sf::st_union(geometry), .by = c(group)) |>
   dplyr::rename("name" = group) |>
-  dplyr::as_tibble()
+  dplyr::as_tibble() |>
+  sf::st_as_sf()
 
 
 
@@ -75,7 +78,8 @@ lokal_arbetsmarknad <-
   sf::st_read("data-raw/regions/LAomraden_2022.shp") |>
   dplyr::rename("code" = "Lakod",
                 "name" = "Namn") |>
-  dplyr::as_tibble()
+  dplyr::as_tibble() |>
+  sf::st_as_sf()
 
 
 
