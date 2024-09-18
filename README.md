@@ -25,7 +25,7 @@ The package contains five datasets:
 
 All datasets are simple features objects, which means they work best with [`sf`](https://r-spatial.github.io/sf/index.html) package functions. For plotting `swemapdata` package data on a map, see, e.g., the [`sf`](https://r-spatial.github.io/sf/index.html) package documentation.
 
-Note: The `swemapdata` package contains similar data as the [`swemaps2`](https://github.com/filipwastberg/swemaps2) package, which is not updated for the most recent R version.
+Note: The `swemapdata` package contains data overlapping with that of the [`swemaps2`](https://github.com/filipwastberg/swemaps2) package.
 
 ## Examples
 
