@@ -34,8 +34,10 @@ big_cities <-
 # Plot landsdelar and big cities
 ggplot() +
   geom_sf(data = landsdelar) +
-  geom_sf(data = big_cities
+  geom_sf(data = big_cities)
 ```
+
+![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)]()
 
 ## Source
 
