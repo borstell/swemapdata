@@ -5,7 +5,7 @@
 \alias{lokal_arbetsmarknad}
 \title{Lokal arbetsmarknad (administrative region; 'local labor market')}
 \format{
-A data frame of Swedish "lokal arbetsmarknad" regions, with three variables:
+An SF object of Swedish "lokal arbetsmarknad" regions, with three variables:
   \code{code}, \code{name} and \code{geometry}.
 }
 \usage{

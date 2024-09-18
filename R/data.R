@@ -4,7 +4,7 @@
 #' Data originally from Statistics Sweden (SCB):
 #' https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/digitala-granser/
 #'
-#' @format A data frame of Swedish municipalities, with three variables:
+#' @format An SF object of Swedish municipalities, with three variables:
 #'   \code{code}, \code{name} and \code{geometry}.
 "kommuner"
 
@@ -13,7 +13,7 @@
 #' Data originally from Statistics Sweden (SCB):
 #' https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/digitala-granser/
 #'
-#' @format A data frame of Swedish "län" regions, with four variables:
+#' @format An SF object of Swedish "län" regions, with four variables:
 #'   \code{code}, \code{name}, \code{group} and \code{geometry}.
 "lan"
 
@@ -31,7 +31,7 @@
 #' Data originally from Statistics Sweden (SCB):
 #' https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/digitala-granser/
 #'
-#' @format A data frame of Swedish "lokal arbetsmarknad" regions, with three variables:
+#' @format An SF object of Swedish "lokal arbetsmarknad" regions, with three variables:
 #'   \code{code}, \code{name} and \code{geometry}.
 "lokal_arbetsmarknad"
 
@@ -40,7 +40,7 @@
 #' Data originally from Statistics Sweden (SCB):
 #' https://www.scb.se/vara-tjanster/oppna-data/oppna-geodata/tatorter/
 #'
-#' @format A data frame of Swedish "tätorter" ('cities'), with 12 variables:
+#' @format An SF object of Swedish "tätorter" ('cities'), with 12 variables:
 #'   \code{id}, \code{uu_id}, \code{code}, \code{name},
 #'   \code{mun_code}, \code{mun_name}, \code{lan_code}, \code{lan_name},
 #'   \code{area}, \code{pop}, \code{year} and \code{geometry}.

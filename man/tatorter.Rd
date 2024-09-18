@@ -5,7 +5,7 @@
 \alias{tatorter}
 \title{Tätorter (cities; 'densely populated locations')}
 \format{
-A data frame of Swedish "tätorter" ('cities'), with 12 variables:
+An SF object of Swedish "tätorter" ('cities'), with 12 variables:
   \code{id}, \code{uu_id}, \code{code}, \code{name},
   \code{mun_code}, \code{mun_name}, \code{lan_code}, \code{lan_name},
   \code{area}, \code{pop}, \code{year} and \code{geometry}.

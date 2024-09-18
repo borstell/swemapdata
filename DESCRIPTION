@@ -1,6 +1,6 @@
 Package: swemapdata
 Type: Package
-Title: A Package of Spatial Data for Sweden (regions and cities)
+Title: A Package of Spatial Data for Sweden - Regions and Cities
 Version: 0.1.0
 Authors@R: 
     c(person(given = "Carl",

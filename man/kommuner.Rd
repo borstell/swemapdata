@@ -5,7 +5,7 @@
 \alias{kommuner}
 \title{Kommuner (municipality)}
 \format{
-A data frame of Swedish municipalities, with three variables:
+An SF object of Swedish municipalities, with three variables:
   \code{code}, \code{name} and \code{geometry}.
 }
 \usage{
