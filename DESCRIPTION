@@ -1,0 +1,17 @@
+Package: swemapdata
+Type: Package
+Title: A Package of Spatial Data for Sweden (regions and cities)
+Version: 0.1.0
+Authors@R: 
+    c(person(given = "Carl",
+             family = "Börstell",
+             role = c("aut", "cre"),
+             email = "carl.borstell@uib.no"))
+Description: A package that contains spatial data for Sweden for mapping 
+    regions and cities, with data originally from Statistics Sweden (SCB).
+License: CC0
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    R (>= 2.10)
+RoxygenNote: 7.3.1
