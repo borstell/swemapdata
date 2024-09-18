@@ -30,12 +30,15 @@ Note: The `swemapdata` package contains similar data as the [`swemaps2`](https:/
 ```r
 # Load packages
 library(tidyverse)
+library(sf)
 library(swemapdata)
 
 # Slice to only the 10 biggest cities by population
 big_cities <-
   tatorter |>
-    slice_max(order_by = pop, n = 10)
+    as_tibble() |> 
+    slice_max(order_by = pop, n = 10) |> 
+    st_as_sf()
 
 # Plot landsdelar and big cities
 ggplot() +
