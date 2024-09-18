@@ -29,40 +29,26 @@ Note: The `swemapdata` package contains data overlapping with that of the [`swem
 
 ## Examples
 
-Some processing may require transforming to a `tibble` and back:
 
 ```r
 # Load packages
-library(tidyverse)
-library(sf)
+library(dplyr)
+library(ggplot2)
 library(swemapdata)
 
-# Slice to only the 10 biggest cities by population
-big_cities <-
-  tatorter |>
-    as_tibble() |> 
-    slice_max(order_by = pop, n = 10) |> 
-    st_as_sf()
-
-# Plot landsdelar and big cities
-ggplot() +
-  geom_sf(data = landsdelar) +
-  geom_sf(data = big_cities)
-
-
-lan |> 
+tatorter |>
+  slice_max(order_by = pop, n = 10) |> 
   ggplot() +
-  geom_sf() +
-  geom_sf(data = \(x) x |> filter(name == "Dalarnas"), fill = "dodgerblue") +
-  theme_void()
+  geom_sf(data = landsdelar) +
+  geom_sf()
 ```
 
 ![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example1.png)
 
 ```r
 # Load packages
-library(tidyverse)
-library(sf)
+library(dplyr)
+library(ggplot2)
 library(swemapdata)
 
 # Plot all the "län" and fill Dalarna in blue
@@ -77,10 +63,10 @@ lan |>
 The logo at the top was made with the package itself:
 
 ```r
-library(tidyverse)
-library(sf)
+library(dplyr)
+library(ggplot2)
 library(swemapdata)
-library(ggtext
+library(ggtext)
 
 ggplot() +
   geom_sf(data = landsdelar |> filter(name == "Norrland"), 
