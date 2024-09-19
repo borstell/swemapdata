@@ -90,5 +90,5 @@ ggplot() +
 ## Source
 
 Original data licensed CC0, see: 
-– [https://www.scb.se/vara-tjanster/oppna-data/](https://www.scb.se/vara-tjanster/oppna-data/)
-– [https://www.lantmateriet.se/sv/geodata/vara-produkter/oppna-data/](https://www.lantmateriet.se/sv/geodata/vara-produkter/oppna-data/)
+- [https://www.scb.se/vara-tjanster/oppna-data/](https://www.scb.se/vara-tjanster/oppna-data/)
+- [https://www.lantmateriet.se/sv/geodata/vara-produkter/oppna-data/](https://www.lantmateriet.se/sv/geodata/vara-produkter/oppna-data/)
