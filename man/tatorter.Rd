@@ -3,12 +3,12 @@
 \docType{data}
 \name{tatorter}
 \alias{tatorter}
-\title{Tätorter (cities; 'densely populated locations')}
+\title{Tätorter (towns; 'densely populated locations')}
 \format{
 An SF object of Swedish "tätorter" ('cities'), with 12 variables:
-  \code{id}, \code{uu_id}, \code{code}, \code{name},
-  \code{mun_code}, \code{mun_name}, \code{lan_code}, \code{lan_name},
-  \code{area}, \code{pop}, \code{year} and \code{geometry}.
+\code{id}, \code{uu_id}, \code{code}, \code{name},
+\code{mun_code}, \code{mun_name}, \code{lan_code}, \code{lan_name},
+\code{area}, \code{pop}, \code{year} and \code{geometry}.
 }
 \usage{
 tatorter

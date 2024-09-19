@@ -5,14 +5,14 @@
 \alias{landsdelar}
 \title{Landsdelar (informal region; 'country parts')}
 \format{
-An SF object of Swedish "landsdelar" regions, with two variables:
-  \code{name} and \code{geometry}.
+An SF object of Swedish "landsdelar" regions, with three variables:
+\code{code}, \code{name} and \code{geometry}.
 }
 \usage{
 landsdelar
 }
 \description{
-Data originally from Statistics Sweden (SCB), but reworked for new grouping:
-https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/digitala-granser/
+Data originally from Lantmäteriet (as CC0), but reworked by:
+https://github.com/perliedman/svenska-landskap
 }
 \keyword{datasets}

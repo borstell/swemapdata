@@ -6,7 +6,7 @@
 \title{Län (administrative region)}
 \format{
 An SF object of Swedish "län" regions, with four variables:
-  \code{code}, \code{name}, \code{group} and \code{geometry}.
+\code{code}, \code{name}, \code{group} and \code{geometry}.
 }
 \usage{
 lan

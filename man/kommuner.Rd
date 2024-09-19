@@ -6,7 +6,7 @@
 \title{Kommuner (municipality)}
 \format{
 An SF object of Swedish municipalities, with three variables:
-  \code{code}, \code{name} and \code{geometry}.
+\code{code}, \code{name} and \code{geometry}.
 }
 \usage{
 kommuner
