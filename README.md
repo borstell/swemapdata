@@ -39,6 +39,7 @@ Note: The `swemapdata` package contains data overlapping with that of the [`swem
 # Load packages
 library(dplyr)
 library(ggplot2)
+library(sf)
 library(swemapdata)
 
 # Plot only top-10 cities by population on top of "landsdelar"
@@ -55,6 +56,7 @@ tatorter |>
 # Load packages
 library(dplyr)
 library(ggplot2)
+library(sf)
 library(swemapdata)
 
 # Plot all the "län" and fill Dalarna in blue
@@ -71,6 +73,7 @@ The logo at the top was made with the package itself:
 ```r
 library(dplyr)
 library(ggplot2)
+library(sf)
 library(swemapdata)
 library(ggtext)
 
