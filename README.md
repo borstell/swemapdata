@@ -144,6 +144,45 @@ lan |>
 ```
 ![Example of region fill](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example4.png)
 
+The lakes in the `landsdelar` and `lan` datasets are not great. One way around this is to superimpose lakes from some other dataset, e.g. `{rnaturalearth}`:
+
+```r
+# Load packages
+library(dplyr)
+library(ggplot2)
+library(sf)
+library(swemapdata)
+library(rnaturalearth)
+
+# Get country map of Sweden
+sweden <- 
+  rnaturalearth::ne_countries(country = c("Sweden"), scale = 10)
+
+# Download lakes
+lakes <- 
+  rnaturalearth::ne_download(scale = 10, type = 'lakes', category = 'physical', returnclass = "sf") 
+
+# Change the type in {sf}
+sf::sf_use_s2(FALSE)
+
+# Find lakes within Sweden's borders
+swelake_id <- 
+  sf::st_contains(sweden, lakes)
+
+# Only include lakes inside Sweden's borders
+swelakes <- 
+  lakes |> 
+  filter(row_number() %in% unlist(swelake_id))
+
+# Plot Sweden with better lakes
+ggplot() +
+  geom_sf(data = swemapdata::landskap) +
+  geom_sf(data = swelakes |> filter(scalerank < 9), fill = "white") +
+  coord_sf()+
+  theme_void()
+```
+![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example5.png)
+
 
 The logo at the top was made with the package itself:
 
