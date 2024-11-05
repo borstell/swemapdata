@@ -144,7 +144,7 @@ lan |>
 ```
 ![Example of region fill](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example4.png)
 
-The lakes in the `landsdelar` and `lan` datasets are not great. One way around this is to superimpose lakes from some other dataset, e.g. `{rnaturalearth}`:
+The lakes in the `landsdelar` and `landskap` datasets are not great. One way around this is to superimpose lakes from some other dataset, e.g. `{rnaturalearth}`:
 
 ```r
 # Load packages
