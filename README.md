@@ -220,7 +220,7 @@ landsdelar |>
   ggplot() +
   geom_sf() +
   coord_sf() +
-  geom_sf(data = swelakes |> filter(scalerank < 9), fill = "white") +
+  geom_sf(data = swelakes |> filter(scalerank < 8) |> filter(name != "Mälaren"), fill = "white") +
   theme_void()
 ```
 ![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example6.png)
