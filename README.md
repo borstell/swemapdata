@@ -59,11 +59,11 @@ library(ggplot2)
 library(sf)
 library(swemapdata)
 
-# Plot all the "län" and fill Dalarna in blue
-lan |> 
+# Plot all the "landskap" and fill Dalarna in blue
+landskap |> 
   ggplot() +
   geom_sf() +
-  geom_sf(data = \(x) x |> filter(name == "Dalarnas"), fill = "dodgerblue") +
+  geom_sf(data = \(x) x |> filter(name == "Dalarna"), fill = "dodgerblue") +
   theme_void()
 ```
 ![Example of region fill](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example2.png)
@@ -183,6 +183,47 @@ ggplot() +
 ```
 ![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example5.png)
 
+Additionally, the `landsdelar` polygons are made from merging the relevant `landskap` together, which leaves some residual holes/lines when lines are visible. This can be removed with the [`{nngeo}`](https://cran.r-project.org/web/packages/nngeo/index.html) package.
+
+```r
+library(tidyverse)
+library(sf)
+library(swemapdata)
+
+
+# Get country map of Sweden
+sweden <- 
+  rnaturalearth::ne_countries(country = c("Sweden"), scale = 10)
+
+# Download lakes
+lakes <- 
+  rnaturalearth::ne_download(scale = 10, type = 'lakes', category = 'physical', returnclass = "sf") 
+
+# Change the type in {sf}
+sf::sf_use_s2(FALSE)
+
+# Find lakes within Sweden's borders
+swelake_id <- 
+  sf::st_contains(sweden, lakes)
+
+# Only include lakes inside Sweden's borders
+swelakes <- 
+  lakes |> 
+  filter(row_number() %in% unlist(swelake_id))
+
+
+landsdelar |> 
+  
+  # Remove residual holes from boundary union
+  nngeo::st_remove_holes() |> 
+  
+  ggplot() +
+  geom_sf() +
+  coord_sf() +
+  geom_sf(data = swelakes |> filter(scalerank < 9), fill = "white") +
+  theme_void()
+```
+![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example6.png)
 
 The logo at the top was made with the package itself:
 
