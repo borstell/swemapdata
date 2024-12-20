@@ -1,6 +1,6 @@
 Package: swemapdata
 Title: A Package of Spatial Data for Sweden - Regions and Cities
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Carl", "Börstell", , "carl.borstell@uib.no", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-7549-4648"))
