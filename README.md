@@ -26,7 +26,7 @@ The package contains eight datasets:
 - `socknar`: Swedish _socknar_ ('parishes'; administrative unit (historically church-related); polygon data)
 - `tatorter`: Swedish _tätorter_ ('densely (populated) towns'; cities/towns; coordinate data (points))
 
-All datasets are simple features (SF) objects, which means they require the [`sf`](https://r-spatial.github.io/sf/index.html) package to be interpreted correctly. For plotting `swemapdata` package data on a map, see, e.g., the [`sf`](https://r-spatial.github.io/sf/index.html) package documentation for how to work with SF objects.
+All datasets are simple features (SF) objects, which means they require something like the [`sf`](https://r-spatial.github.io/sf/index.html) package to be interpreted correctly. For plotting `swemapdata` package data on a map, see, e.g., the [`sf`](https://r-spatial.github.io/sf/index.html) package documentation for how to work with SF objects.
 
 The data comes from Statistics Sweden (SCB) and Lantmäteriet, apart from post-processed data from [https://github.com/perliedman/svenska-landskap](https://github.com/perliedman/svenska-landskap) (originally from Lantmäteriet). 
 
@@ -47,7 +47,7 @@ tatorter |>
   slice_max(order_by = pop, n = 10) |> 
   ggplot() +
   geom_sf(data = landsdelar) +
-  geom_sf()
+  geom_sf(shape = 21, color = "white", fill = "grey20")
 ```
 
 ![Example of the 10 most populous cities in Sweden plotted with landsdelar (country parts)](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example1.png)
@@ -172,58 +172,19 @@ swelake_id <-
 # Only include lakes inside Sweden's borders
 swelakes <- 
   lakes |> 
-  filter(row_number() %in% unlist(swelake_id))
+  filter(row_number() %in% unlist(swelake_id)) |> 
+  
+  # Remove Mälaren (otherwise it plots over islands)
+  filter(name != "Mälaren")
 
 # Plot Sweden with better lakes
 ggplot() +
   geom_sf(data = swemapdata::landskap) +
-  geom_sf(data = swelakes |> filter(scalerank < 9), fill = "white") +
+  geom_sf(data = swelakes |> filter(scalerank < 8), fill = "white") +
   coord_sf()+
   theme_void()
 ```
 ![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example5.png)
-
-Additionally, the `landsdelar` polygons are made from merging the relevant `landskap` together, which leaves some residual holes/lines when lines are visible. This can be removed with the [`{nngeo}`](https://cran.r-project.org/web/packages/nngeo/index.html) package.
-
-```r
-library(tidyverse)
-library(sf)
-library(swemapdata)
-
-
-# Get country map of Sweden
-sweden <- 
-  rnaturalearth::ne_countries(country = c("Sweden"), scale = 10)
-
-# Download lakes
-lakes <- 
-  rnaturalearth::ne_download(scale = 10, type = 'lakes', category = 'physical', returnclass = "sf") 
-
-# Change the type in {sf}
-sf::sf_use_s2(FALSE)
-
-# Find lakes within Sweden's borders
-swelake_id <- 
-  sf::st_contains(sweden, lakes)
-
-# Only include lakes inside Sweden's borders
-swelakes <- 
-  lakes |> 
-  filter(row_number() %in% unlist(swelake_id))
-
-
-landsdelar |> 
-  
-  # Remove residual holes from boundary union
-  nngeo::st_remove_holes() |> 
-  
-  ggplot() +
-  geom_sf() +
-  coord_sf() +
-  geom_sf(data = swelakes |> filter(scalerank < 8) |> filter(name != "Mälaren"), fill = "white") +
-  theme_void()
-```
-![Example of better lakes](https://github.com/borstell/borstell.github.io/blob/master/media/swemapdata/swemapdata_example6.png)
 
 The logo at the top was made with the package itself:
 
