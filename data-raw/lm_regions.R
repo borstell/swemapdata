@@ -3,6 +3,7 @@
 library(dplyr)
 library(sf)
 library(geojsonsf)
+library(nngeo)
 
 
 
@@ -70,7 +71,8 @@ landsdelar <-
   dplyr::rename("code" = "landsdel_code",
                 "name" = "landsdel_name") |>
   dplyr::as_tibble() |>
-  sf::st_as_sf()
+  sf::st_as_sf() |>
+  nngeo::st_remove_holes()
 
 
 
