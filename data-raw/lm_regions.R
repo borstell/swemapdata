@@ -72,7 +72,7 @@ landsdelar <-
                 "name" = "landsdel_name") |>
   dplyr::as_tibble() |>
   sf::st_as_sf() |>
-  nngeo::st_remove_holes()
+  nngeo::st_remove_holes(max_area = 1000)
 
 
 
