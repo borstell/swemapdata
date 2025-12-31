@@ -160,7 +160,7 @@ sweden <-
 
 # Download lakes
 lakes <- 
-  rnaturalearth::ne_download(scale = 10, type = 'lakes', category = 'physical', returnclass = "sf") 
+  rnaturalearth::ne_download(scale = 10, type = "lakes", category = "physical", returnclass = "sf") 
 
 # Change the type in {sf}
 sf::sf_use_s2(FALSE)
